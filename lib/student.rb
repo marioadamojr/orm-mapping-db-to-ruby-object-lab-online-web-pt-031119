@@ -43,6 +43,7 @@ class Student
     FROM students
     WHERE row[2] == 9
     SQL
+    DB[:conn].execute(sql)
   end
 
   def save

@@ -36,6 +36,15 @@ class Student
     end.first
   end
 
+  def self.all_students_in_grade_9
+
+    sql = <<-SQL
+    SELECT *
+    FROM students
+    WHERE row[2] == 9
+    SQL
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)

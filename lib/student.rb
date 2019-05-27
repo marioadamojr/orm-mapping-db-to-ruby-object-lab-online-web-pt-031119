@@ -79,9 +79,11 @@ class Student
       sql = <<-SQL
         SELECT *
         FROM students
-        WHERE NOT students.grade = 12
+        WHERE students.grade < 12
       SQL
-      DB[:conn].execute(sql)
+      DB[:conn].execute(sql).collect do |row|
+        self.new_from_db(row)
+      end
 
     end
 

@@ -77,7 +77,7 @@ class Student
       sql = <<-SQL
         SELECT *
         FROM students
-        WHERE (grade == 9) OR (grade == 10) OR (grade == 11)
+        WHERE grade != 12
       SQL
     end
 

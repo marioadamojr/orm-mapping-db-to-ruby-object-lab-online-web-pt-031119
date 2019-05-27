@@ -29,6 +29,7 @@ class Student
 
   ######### new
 
+    #when pulling from DB and making the row into an instance of the class
     def self.new_from_db(row)
       # create a new Student object given a row from the database
       new_student = self.new

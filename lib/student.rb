@@ -37,7 +37,6 @@ class Student
   end
 
   def self.all_students_in_grade_9
-
     sql = <<-SQL
     SELECT *
     FROM students
@@ -45,6 +44,8 @@ class Student
     SQL
     DB[:conn].execute(sql)
   end
+
+
 
   def save
     sql = <<-SQL

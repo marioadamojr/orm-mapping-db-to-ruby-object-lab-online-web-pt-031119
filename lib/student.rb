@@ -110,6 +110,6 @@ class Student
       SQL
       DB[:conn].execute(sql).collect do |row|
         self.new_from_dB(row)
-        end
+      end
     end
 end

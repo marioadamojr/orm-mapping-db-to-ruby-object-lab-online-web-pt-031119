@@ -66,13 +66,19 @@ class Student
 
     def self.all_students_in_grade_9
       sql = <<-SQL
-      SELECT *
-      FROM students
-      WHERE grade == 9
-      SQL
+        SELECT *
+        FROM students
+        WHERE grade == 9
+        SQL
       DB[:conn].execute(sql)
     end
 
-
+    def self.student_below_12th_grade
+      sql = <<-SQL
+        SELECT * 
+        FROM students
+        WHERE grade == 9 OR grade == 10 OR grade == 11
+      SQL
+    end
 
 end

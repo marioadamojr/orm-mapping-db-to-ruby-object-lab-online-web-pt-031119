@@ -119,7 +119,7 @@ class Student
       FROM students
       WHERE students.grade == ?
     SQL
-    DB[:conn].execute(sql, grade).collect do |map|
+    DB[:conn].execute(sql, selfgrade).collect do |map|
       self.new_from_db(sql, self.grade)
     end
   end
